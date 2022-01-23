@@ -6,6 +6,7 @@ import com.ni3.hotelroomserviceapi.service.HotelRoomService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 @RequestMapping("/room")
 public class HotelRoomController {
     @Autowired
+    @Qualifier("dbService")
     private HotelRoomService hotelRoomService; // need abstraction // swagger
 
     @GetMapping("/all")

@@ -3,15 +3,25 @@ package com.ni3.hotelroomserviceapi.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 @ApiModel(description = "Details About Hotel Room")
 public class HotelRoom {
 
+    @Id
     @ApiModelProperty(notes = "The unique id of hotel room")
     private int hotelId;
 
+    @Column
     @ApiModelProperty(notes = "price of hotel room")
     private int price;
 
+    @Column
     @ApiModelProperty(notes = "Hotel room availability flag")
     private boolean isAvailable;
 
